@@ -6,12 +6,12 @@ const formulario = document.getElementById('formulario-contacto');
 
         let formularioValido = true;
 
-        // Elementos
+
         const nombreInput = document.getElementById('name');
         const emailInput = document.getElementById('email');
         const mensajeInput = document.getElementById('message');
         
-        // Validación Radio Buttons (Busca si alguno está chequeado)
+
         const radios = document.getElementsByName('tipo_usuario');
         const errorRadio = document.getElementById('error-radio');
         let radioSeleccionado = false;
@@ -23,7 +23,7 @@ const formulario = document.getElementById('formulario-contacto');
             }
         }
 
-        // 1. VALIDAR NOMBRE
+
         if (nombreInput.value.trim() === '') {
             mostrarError(nombreInput);
             formularioValido = false;
@@ -31,7 +31,7 @@ const formulario = document.getElementById('formulario-contacto');
             quitarError(nombreInput);
         }
 
-        // 2. VALIDAR EMAIL
+
         if (!esEmailValido(emailInput.value)) {
             mostrarError(emailInput);
             formularioValido = false;
@@ -39,15 +39,14 @@ const formulario = document.getElementById('formulario-contacto');
             quitarError(emailInput);
         }
 
-        // 3. VALIDAR RADIO BUTTONS
         if (!radioSeleccionado) {
-            errorRadio.style.display = 'block'; // Muestra el mensaje de error rojo
+            errorRadio.style.display = 'block'; 
             formularioValido = false;
         } else {
             errorRadio.style.display = 'none';
         }
 
-        // 4. VALIDAR MENSAJE
+
         if (mensajeInput.value.trim() === '') {
             mostrarError(mensajeInput);
             formularioValido = false;
@@ -55,7 +54,7 @@ const formulario = document.getElementById('formulario-contacto');
             quitarError(mensajeInput);
         }
 
-        // ENVÍO FINAL
+
         if (formularioValido) {
             alert('¡Todo correcto! Enviando datos...');
             formulario.submit();
@@ -75,4 +74,5 @@ const formulario = document.getElementById('formulario-contacto');
         input.classList.remove('is-invalid');
         input.classList.add('is-valid');
     }
+
 });
