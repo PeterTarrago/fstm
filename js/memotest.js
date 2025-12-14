@@ -1,6 +1,6 @@
-/* Archivo: js/memotest.js */
 
-// TUS IMÁGENES EXACTAS
+
+
 const imagenesBase = [
   '../imagenes/cliente/carrousel_cliente1.jpg',
   '../imagenes/cliente/carrousel_cliente2.jpg',
@@ -22,18 +22,18 @@ const spanMovimientos = document.getElementById('movimientos');
 const mensajeGanador = document.getElementById('mensaje-ganador');
 
 function iniciarJuego() {
-  // Duplicamos y mezclamos
+
   cartas = [...imagenesBase, ...imagenesBase];
   cartas.sort(() => 0.5 - Math.random());
 
-  // Reseteamos variables visuales
+
   tablero.innerHTML = '';
   contadorMovimientos = 0;
   paresEncontrados = 0;
   spanMovimientos.innerText = 0;
   mensajeGanador.style.display = 'none';
 
-  // Creamos el HTML de cada carta
+
   cartas.forEach(imgSrc => {
     const carta = document.createElement('div');
     carta.classList.add('carta');
@@ -106,5 +106,6 @@ function incrementarMovimientos() {
 function reiniciarJuego() {
     iniciarJuego();
 }
+
 
 document.addEventListener('DOMContentLoaded', iniciarJuego);
